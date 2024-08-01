@@ -32,7 +32,7 @@ class MboxModuleController extends ActionController
         $this->moduleTemplateFactory = $moduleTemplateFactory;
     }
 
-    public function initializeAction()
+    public function initializeAction(): void
     {
         $this->moduleTemplate = $this->moduleTemplateFactory->create($this->request);
         $this->moduleTemplate->setTitle('EXT:mbox');
@@ -46,12 +46,8 @@ class MboxModuleController extends ActionController
         }
     }
 
-    /**
-     * v12 returns ModuleTemplate, v11 ViewInterface
-     *
-     * @return ModuleTemplate|ViewInterface
-     */
-    private function getViewToUse()
+
+    private function getViewToUse(): ModuleTemplate
     {
         if (method_exists($this->moduleTemplate, 'assign')) {
             return $this->moduleTemplate;
@@ -61,12 +57,6 @@ class MboxModuleController extends ActionController
 
     private function renderViewToUse(): ResponseInterface
     {
-        if (!$this->getViewToUse() instanceof ModuleTemplate) {
-            // v11
-            $this->moduleTemplate->setContent($this->getViewToUse()->render());
-            return $this->htmlResponse($this->moduleTemplate->renderContent());
-        }
-
         return $this->htmlResponse($this->getViewToUse()->render());
     }
 

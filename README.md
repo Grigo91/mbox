@@ -36,8 +36,8 @@ This extension has been supported by [**Institut der deutschen Wirtschaft Köln 
 
 ## Requirements
 
-- TYPO3 11.5 LTS or 12
-- PHP >=7.4
+- TYPO3 12 LTS or 13
+- PHP >=8.0
 
 
 ## Installation
@@ -85,7 +85,7 @@ The command got the name ``mbox:testmails:send`` and will send four test mails (
 
 ## Dev Environment
 
-The extension repository provides a DDEV environment to develop on EXT:mbox locally in TYPO3 11 and 12. 
+The extension repository provides a DDEV environment to develop on EXT:mbox locally in TYPO3 12 and 13. 
 You find more information [here](https://github.com/a-r-m-i-n/ddev-for-typo3-extensions).
 
 ### Minimum instructions
@@ -96,8 +96,8 @@ ddev install-all
 ```
 
 * Overview: https://mbox.ddev.site/
-* TYPO3 11 Backend: https://v11.mbox.ddev.site/typo3/
 * TYPO3 12 Backend: https://v12.mbox.ddev.site/typo3/
+* TYPO3 13 Backend: https://v13.mbox.ddev.site/typo3/
 * Username: `admin`
 * Password: `Password:joh316` (also in install tool)
 
